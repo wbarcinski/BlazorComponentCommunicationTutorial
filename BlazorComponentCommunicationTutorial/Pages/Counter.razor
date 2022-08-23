@@ -1,18 +1,18 @@
 ﻿@page "/counter"
+@using BlazorComponentCommunicationTutorial.Services
+@inject INotificationService NotificationService;
 
 <PageTitle>Counter</PageTitle>
 
 <h1>Counter</h1>
 
-<p role="status">Current count: @currentCount</p>
+<p role="status">Current count: @NotificationService.Count</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick=@NotificationService.IncrementCounter>Click me</button>
 
 @code {
-    private int currentCount = 0;
-
-    private void IncrementCount()
+    protected override void OnInitialized()
     {
-        currentCount++;
+        NotificationService.Onchange += StateHasChanged;
     }
 }
