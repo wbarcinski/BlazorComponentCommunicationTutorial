@@ -4,18 +4,18 @@
     {
         public int Count { get; set; } = 0;
 
-        public event Action Onchange;
+        public event Action OnChange;
 
         public void IncrementCounter()
         {
             Count++;
-            Onchange?.Invoke();
+            OnChange?.Invoke();
         }
 
-        public void ReserCounter()
+        public void ResetCount()
         {
             Count=0;
-            Onchange?.Invoke();
+            OnChange?.Invoke();
         }
     }
 }

@@ -2,10 +2,10 @@
 {
     public interface INotificationService
     {
-        event Action Onchange;
+        event Action OnChange;
         int Count { get; set; }
         void IncrementCounter();
-        void ReserCounter();
+        void ResetCount();
 
     }
 }

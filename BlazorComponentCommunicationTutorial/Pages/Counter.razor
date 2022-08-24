@@ -11,8 +11,16 @@
 <button class="btn btn-primary" @onclick=@NotificationService.IncrementCounter>Click me</button>
 
 @code {
+
     protected override void OnInitialized()
     {
-        NotificationService.Onchange += StateHasChanged;
+        NotificationService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        NotificationService.OnChange -= StateHasChanged;
     }
 }
+   
+
