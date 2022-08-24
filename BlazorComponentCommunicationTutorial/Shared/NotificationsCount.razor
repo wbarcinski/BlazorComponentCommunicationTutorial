@@ -8,10 +8,16 @@
         @NotificationService.Count
     </span>
 </button>
+@foreach (var item in NotificationService.Messages)
+{
+    <p>@item</p>    
+}
+
 
 @code {
     protected override void OnInitialized()
     {
+        NotificationService.Messages = new List<string>() { "1", "2","3","5555"};
         NotificationService.OnChange += StateHasChanged;
     }
 
