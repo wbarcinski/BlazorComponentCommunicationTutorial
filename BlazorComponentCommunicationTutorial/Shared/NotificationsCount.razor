@@ -1,18 +1,21 @@
 ﻿@inject INotificationService NotificationService
 @implements IDisposable
-
+<div>
+    <style>.text-my{text-decoration-color: white}</style>
 <button type="button" class="btn btn-primary position-relative"
         @onclick="NotificationService.ResetCount">
     <i class="oi oi-bell"></i>
-    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger 
+        text-my">
+        
         @NotificationService.Count
     </span>
 </button>
 @foreach (var item in NotificationService.Messages)
 {
-    <p>@item</p>    
+    <p class="text-my">@item</p>    
 }
-
+</div>
 
 @code {
     protected override void OnInitialized()
