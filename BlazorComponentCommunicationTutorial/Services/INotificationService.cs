@@ -1,4 +1,4 @@
-﻿namespace BlazorComponentCommunicationTutorial.Services
+﻿        namespace BlazorComponentCommunicationTutorial.Services
 {
     public interface INotificationService
     {
@@ -8,6 +8,7 @@
         void IncrementCounter();
         void ResetCount();
         void AddItem();
+        void ResetMessages();
 
     }
 }

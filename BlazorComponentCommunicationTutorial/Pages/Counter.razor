@@ -11,6 +11,7 @@
 
 <button class="btn btn-primary" @onclick=@NotificationService.IncrementCounter>Click me</button>
 <button class="btn btn-primary" @onclick=@NotificationService.AddItem>Add Item</button>
+<button class="btn btn-primary" @onclick=@NotificationService.ResetMessages>Reset Messages</button>
 @foreach (var item in NotificationService.Messages)
 {
     <p>@item</p>
